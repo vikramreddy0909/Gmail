@@ -1,0 +1,13 @@
+{% if email %}
+<h3 style="background-color:grey">email successfully sent  to: {{email}} </h3>
+{% endif %}
+{% if msg %}
+{{msg}}
+{% endif %}
+<a href="/gmailapp/compose/">compose mail</a><br>
+<a href="/gmailapp/inbox/">Inbox</a><br>
+<a href="/gmailapp/sent_mail/">sent box</a><br>
+<a href="/gmailapp/spam/">spam mails</a><br>
+<a href="/gmailapp/trash/">trash mails</a><br>
+<a href="/gmailapp/draft/">draft mails</a><br>
+<a href="/gmailapp/logout/">logout</a><br><br>

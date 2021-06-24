@@ -1,0 +1,12 @@
+{% if error %}
+{{error}}
+ {% endif %}
+<h1> Welcome to the Gmail project</h1>
+<form action="/gmailapp/validation_login/" method="post">
+ {% csrf_token %}
+ <b>Email Address</b><input type="email" name="email"><br>
+ <b>Password</b><input type="password" name="password"><br>
+<input type="submit" value="login"><br>
+</form>
+
+Create an account <a href="/gmailapp/register/">registration</a><br>

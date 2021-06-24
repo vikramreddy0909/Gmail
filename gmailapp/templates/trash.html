@@ -1,0 +1,16 @@
+{% for each in data %}
+<b>from:</b>{{ each.sender}}<br><b>to:</b>{{each.reciever}}<form action="/gmailapp/{{each.id}}/un_trash/" method="post">
+ {% csrf_token %}
+ <input type="checkbox" name="is_trash" {% if appication.is_verified %}make trash{% endif %}/>
+ <input type="submit" value="untrash">
+</form>
+<form action="/gmailapp/{{each.id}}/delete/" method="post">
+ {% csrf_token %}
+ <input type="checkbox" name="is_trash" {% if appication.is_verified %}make trash{% endif %}/>
+ <input type="submit" value="delete">
+</form>
+<hr>
+{% endfor %}
+
+ <a href="/gmailapp/email/">Back</a><br>
+<a href="/gmailapp/logout/">logout</a><br>

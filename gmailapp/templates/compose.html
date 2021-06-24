@@ -1,0 +1,13 @@
+<form action="/gmailapp/save_mail/" method="post">
+    {% csrf_token %}
+    <b>To :</b><input type="email" name="email"><br>
+    <b>Subject :</b><input type="text" name="subject"><br>
+    <b>Body :</b><input type="text" name="message"><br>
+    <b>File :</b><input type="file" name="file"><br>
+<!--    <input type="submit" value="send">-->
+      <input type="submit" name="send" value="submit"><br> <input type="submit" name="send" value="cancel">
+
+</form>
+ <a href="/gmailapp/save_draft/">back</a><br>
+
+<a href="/gmailapp/logout/">logout</a><br>

@@ -1,0 +1,15 @@
+{% for each in mail %}
+<b>sender :</b> {{each.sender}}<br>
+<b>receiver :</b>{{each.reciever}}<br>
+<b>subject :</b>  {{each.subject}}<br>
+<b>body :</b> {{each.body}}<br>
+<b>file :</b> {{each.file}}<br>
+trash:<form action="/gmailapp/{{each.id}}/make_trash/" method="post">
+ {% csrf_token %}
+ <input type="checkbox" name="is_trash" {% if appication.is_verified %}make trash{% endif %}/>
+ <input type="submit" value="submit">
+</form>
+<hr>
+{% endfor %}
+<a href="/gmailapp/email/">Back</a><br>
+<a href="/gmailapp/logout/">logout</a><br>
